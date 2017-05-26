@@ -22,7 +22,8 @@ app.get('/api/cheeses', (req, res) => {
     'Stichelton',
     'Stilton',
     'Blue Wensleydale',
-    'Yorkshire Blue'
+    'Yorkshire Blue',
+    'yabadaboo!'
   ];
   res.json(cheeses);
 });
@@ -35,10 +36,10 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 // client-side routing using browserHistory can function
 
 
-// app.get(/^(?!\/api(\/|$))/, (req, res) => {
-//     const index = path.resolve(__dirname, '../client/build', 'index.html');
-//     res.sendFile(index);
-// });
+app.get(/^(?!\/api(\/|$))/, (req, res) => {
+    const index = path.resolve(__dirname, '../client/build', 'index.html');
+    res.sendFile(index);
+});
 
 let server;
 function runServer(port=3001) {
