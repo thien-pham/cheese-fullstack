@@ -6,6 +6,12 @@ import store from './store';
 import App from './App';
 import './index.css';
 
+//  const cheeses = [
+//         "Bath Blue",
+//         "Barkham Blue",
+//         "Buxton Blue"];
+
+
 
 ReactDOM.render(
   <Provider store={store} >
