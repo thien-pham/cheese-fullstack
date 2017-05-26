@@ -1,12 +1,12 @@
 import React from 'react';
 import App from './app';
 import {connect} from 'react-redux';
+import {GET_CHEESES, REQUEST_CHEESES,fetchCheeses} from './actions';
 
-export class CheeseList extends React.Component (props){
+export function CheeseList(props){
     componentDidMount() {
-        this.props.dispatch(fetchCheeses());
+        props.dispatch(fetchCheeses());
     }
-    render() {
          return(
             <ul>
                 {this.props.cheeses.map((cheese, index) => 
@@ -14,7 +14,6 @@ export class CheeseList extends React.Component (props){
                     )}
             </ul>
         );
-    }
    
 }
 
